@@ -36,3 +36,8 @@ Some skeleton components have been provided as a kick-off point:
 - [styles](./packages/client/src/styles) - Just the reset styles for various browsers
 
 > Reminder: You may use either JavaScript or TypeScript to complete the solution. Please use whatever language you are most comfortable with. We will not give preference to either language choice.
+
+### Main resources used to complete
+- https://reactjs.org/tutorial/tutorial.html
+- https://github.com/marcelxyz/minimax-typescript
+- https://github.com/alialaa/tic-tac-toe-js-2020 

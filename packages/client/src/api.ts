@@ -5,7 +5,7 @@ import {
   Player,
 } from '@mapistry/take-home-challenge-shared';
 
-export const begin = async (
+export const begin = async ( // QUESTION - Why is there a separate begin function ??
   difficulty: Difficulty,
   whoIsFirst: Player,
 ): Promise<GameStatus> => {
@@ -23,7 +23,7 @@ export const begin = async (
 
 export const move = async (
   board: Board,
-  difficulty: Difficulty,
+  difficulty: Difficulty, // QUESTION - What is the purpose of difficulty if the game is unbeatable? 
 ): Promise<GameStatus> => {
   const response = await fetch('/api/move', {
     method: 'post',

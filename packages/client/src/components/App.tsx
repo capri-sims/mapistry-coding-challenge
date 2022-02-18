@@ -1,7 +1,9 @@
 import '../styles/reset.css';
+import { Game } from "./tictactoe/Game.jsx";
 
 export const App = () => (
   <main>
-    <div>FIXME: add your solution here!</div>
+      <Game />
   </main>
-);
+); 
+

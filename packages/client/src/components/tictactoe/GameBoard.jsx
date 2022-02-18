@@ -19,13 +19,17 @@ export class GameBoard extends React.Component {
 
   handleClick(i) {
     const { squares } = this.state; 
-    let newSquares = squares.slice(); // creates a copy
 
+    if(squares[i] !== '') return; // ensures user can't change existing value
+
+    let newSquares = squares.slice(); // creates a copy
     newSquares[i] = 'x'; // FUTURE - allow user to choose to use X or O ? 
+
     this.setState({
       squares: newSquares,
       usersTurn: false
     });
+
     newSquares = newSquares.map((val => val || null )); // ensures the board matches the Board type
 
     move(newSquares, null)
@@ -47,6 +51,7 @@ export class GameBoard extends React.Component {
       });
   }
 
+  // TODO - allow keyboard users to tab and select button with enter
   renderSquare(i) {
     const { squares, usersTurn, winner } = this.state; 
     return (
@@ -58,6 +63,10 @@ export class GameBoard extends React.Component {
     );
   }
 
+  // FIXME - when api returns quickly user may see the status message flicker - add a timeout or progress bar/spinner ? 
+  // TODO - allow user to choose who goes first
+  // TODO - highlight winning line
+  // TODO - create reset button
   render() {
     const { usersTurn, winner } = this.state; 
     
@@ -65,11 +74,6 @@ export class GameBoard extends React.Component {
     if (winner) {
       status = winner === 'tie' ? "It's a tie!" : "Computer Wins!";
     }
-
-    // FIXME - when api returns quickly user may see the status message flicker - add a timeout or progress bar/spinner ? 
-    // TODO - allow user to choose who goes first
-    // TODO - highlight winning line
-    // TODO - create reset button
 
     return (
       <div>

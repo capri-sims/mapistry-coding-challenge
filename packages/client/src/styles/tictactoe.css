@@ -40,6 +40,11 @@ ol, ul {
     margin-top: -1px;
     padding: 0;
     text-align: center;
+    color: black; 
+}
+
+.square:disabled {
+    color: darkgray; 
 }
 
 .game {
@@ -48,4 +53,5 @@ ol, ul {
     align-items: center;
     justify-content: center;
 }
+
 

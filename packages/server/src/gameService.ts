@@ -56,7 +56,7 @@ export class GameService {
         return bestMove;
     }
 
-    generatePossiblities(board: Board, maximizing: boolean) : Board[] {
+    private generatePossiblities(board: Board, maximizing: boolean) : Board[] {
         const possibilities: Board[] = [];
 
         board.forEach((cell, i) => {
@@ -92,7 +92,7 @@ export class GameService {
         return gameStatus;
     }
 
-    getWinningLines() : WinningLines[] {
+    private getWinningLines() : WinningLines[] {
         return [
             {line : {row: 0}, indices: [0, 1, 2]},
             {line : {row: 1}, indices: [3, 4, 5]},
